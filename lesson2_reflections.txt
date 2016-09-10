@@ -6,7 +6,7 @@ What value do you think it offers?
 
 It's a mid-way point. It has value as as it represents your work in progress. Once you feel
 happy with your work in the staging area eg new functinality working you can commit it, while
-not contaminating it maybe with other work in progress
+not contaminating it maybe with other work in progress.
 
 How can you use the staging area to make sure you have one commit per logical
 change?

@@ -28,5 +28,9 @@ the diagram the way we do?
 
 It adds the changes from each branch and creates a single branch. Diagrams show the branch and merge in 2D
 
-What are the pros and cons of Gitâ€™s automatic merging vs. always doing merges
+What are the pros and cons of Gits automatic merging vs. always doing merges
 manually?
+
+Pros are its easy and you dont have to think about it. Cons are you have to think more clearly about it when 
+it fails. Worse, anything  automatic (like having a satnav) can lead to over reliance and make it
+harder to work out when you really to do it manually.

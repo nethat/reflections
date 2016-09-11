@@ -1,3 +1,4 @@
-When would you want to use a remote repository rather than keeping all your work local?
+Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
 
-When you're finished committing your changes, click "Next" to see how to pull those changes to your own computer.
+To give you absolute control over what is in your local repo. You dont want changes that you dont know about to just appear.
+

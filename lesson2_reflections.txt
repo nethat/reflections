@@ -26,5 +26,7 @@ it can get kinda complex with multiple branches and non-branched detached HEADS.
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+It adds the changes from each branch and creates a single branch. Diagrams show the branch and merge in 2D
+
 What are the pros and cons of Gitâ€™s automatic merging vs. always doing merges
 manually?

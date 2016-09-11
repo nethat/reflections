@@ -8,5 +8,24 @@ Fork is just a cloning feature on a remote repo like Github or Bitbucket. It's A
 not part of git cli. Cloning is part of git (git clone) and allows you to copy a full repo (all branches? or just master?) from a local or 
 remote to your new working directory. Branches are definitely local to single repo, to be used for new features, experimental stuff etc
 
+What is the benefit of having a copy of the last known state of the remote stored locally?
+
+It does actually allow collaboration by multiple collaboraters as it allows you to merge the two locally before pushing.
+
+How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+
+It would be a bit tricky - just using standard sharepoint type checkout/checkin to only allow one person to update at a time. But
+that makes it hard to control as the person with temporary RW could mess it up, and worse he could be the only one working at the time.
+Merging from local copies would have to be done by hand when the files were able to be checked out again.
+
+Even with git the ability to have multiple contributers update master is only practical with a small number of contributers
+Seems better to only allow a small number of people to update master and then allow contributers to merge their changes
+via pull requests.
+
+When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
+
+When working on new functionality or fixing a bug but not wanting to impact master until happy with it and peers happy with it.
+This keeps master stable until we are ready to update it.
+
 
 

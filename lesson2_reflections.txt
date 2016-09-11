@@ -21,6 +21,8 @@ When you have another side project eg experimental or different language or a wh
 
 How do the diagrams help you visualize the branch structure?
 
+it can get kinda complex with multiple branches and non-branched detached HEADS..Picture saves a 1000 words
+
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 

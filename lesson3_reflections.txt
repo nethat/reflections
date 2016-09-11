@@ -2,3 +2,11 @@ Why might you want to always pull changes manually rather than having Git automa
 
 To give you absolute control over what is in your local repo. You dont want changes that you dont know about to just appear.
 
+Describe the differences between forks, clones, and branches. When would you use one instead of another?
+
+Fork is just a cloning feature on a remote repo like Github or Bitbucket. It's APIs and significance are all on Github/BB. Fork is
+not part of git cli. Cloning is part of git (git clone) and allows you to copy a full repo (all branches? or just master?) from a local or 
+remote to your new working directory. Branches are definitely local to single repo, to be used for new features, experimental stuff etc
+
+
+

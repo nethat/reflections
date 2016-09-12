@@ -1,0 +1,70 @@
+git init # This initialises a repository
+git clone # Downloads a copy of a repository, including all historical commits and metadata
+git log # Shows a log of commits with IDs and the commit message
+git status # Shows where you are on branch (eg HEAD), what files have been modified in working directory and are not in staging area
+           # and what files are untracked
+gid diff <commit1> <commit2> # Shows a diff of files between different commits
+git diff # Shows a diff of files between working directory and the staging area - but not untracked files
+git diff --staged # Shows a diff of files between staging area and the most recent commit.
+git show #  reports last commit message + reports the changes introduced by the most recent commit equiv to git diff <recent commit> <prior commit>
+git show HEAD # equivalent to git show
+git show HEAD~ # equivalent to git diff <n-1 commmit> <n-2 commit> if on the Nth commit
+git show HEAD~~ # same but goes back 2 commits instead of 1
+git show HEAD~2 # equivalent to git show HEAD~~
+git checkout <id> # This drags back files into your working directory from the commit with id <id>. detached HEAD mode.
+
+Try cat .git/HEAD  # This is how git keeps track of where you are in the branch.
+
+if you are at the end of the main branch:
+
+$ cat .git/HEAD
+ref: refs/heads/master
+
+if you have checked out an earlier commit, it gives you the ID of the commit your on in detached HEAD mode.
+
+$ cat ../asteroids/.git/HEAD
+3884eab839af1e82c44267484cf2945a766081f3
+
+git reset --hard # Discards changes in working directory and staging area to last commit - use with caution
+                 # It doesnt impact untracked files though
+
+git checkout master # This gets you out of detached HEAD mode and takes you to the true final commit.
+
+git branch # Tells you what branches exist and puts an asterix next to the branch you are on
+git branch easy-mode # Creates a new branch called easy-mode. The commit status will be same as existing branch
+git checkout easy-mode # Changes the branch you are on to easy-mode (easy-mode is just text - it could be any text)
+git branch -b easy-mode # equivalent to running 'git branch easymode' followed by 'git checkout easy-mode'
+
+git log --graph --oneline master coins # Shows you commits for 2 branches in graph format
+
+git merge # git merge always merges all the specified branches into the currently checked out branch
+git merge --abort # used if after trying a merge (or even a pull which is a fetch&merge) it failed and you want to go back to prior working dir and staging area
+git log --graph --oneline # This run after a merge shows the two branches in graphical format
+git branch -d coins # deletes the coins branch. Just deletes the label, doesnt delete the commit history
+
+git remote add <Git URL># Used to add a remote repository
+git remote # Lists what remotes you have set up by name (eg origin)
+gir remote -v # Verbos mode, lists the full URL for fetch and push
+git push origin master # Pushes your latest commits from 'master' branch to the remote repository 'origin'
+git pull origin master # Pulls the latest (or whichever ones you dont have locally) commits from remote repository to the branch master
+git status # In addition to what is written prior, it also shows if your local repo is ahead of remote and by how many commits
+
+When you have a remote, git keeps copy of all remote branches (and keeps state as of last time a push/pull occured)
+Git keeps track of remote commits with a different branch called origin/master - its actually a differenet branch in your local repo.
+git pull origin master = (git fetch origin) + (git merge master origin/master)
+
+Can see the all branches (local & remote) including origin/master with 'git branch -a'
+
+$ git branch -a
+* easy-mode
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/coins
+  remotes/origin/master
+
+You can see all the branches on the remote with 'bit branch -r'
+
+$ git branch -r
+  origin/HEAD -> origin/master
+  origin/coins
+  origin/master
